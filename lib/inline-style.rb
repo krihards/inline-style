@@ -65,7 +65,7 @@ class InlineStyle
           nodes[node].push rule
         end
       rescue Exception => e
-        logger.debug "i dont care " + e
+        Rails.logger.debug "i dont care " + e
       end
     end
 
