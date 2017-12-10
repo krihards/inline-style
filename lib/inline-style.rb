@@ -64,7 +64,7 @@ class InlineStyle
           nodes[node] ||= []
           nodes[node].push rule
         end
-      rescue e
+      rescue Exception => e
         logger.debug "i dont care " + e
       end
     end
