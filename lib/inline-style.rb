@@ -59,9 +59,13 @@ class InlineStyle
     nodes, body = {}, @dom.css('body')
 
     parse_css.rules.each do |rule|
-      body.css(rule.selector).each do |node|
-        nodes[node] ||= []
-        nodes[node].push rule
+      begin
+        body.css(rule.selector).each do |node|
+          nodes[node] ||= []
+          nodes[node].push rule
+        end
+      rescue e
+        logger.debug "i dont care " + e
       end
     end
 
